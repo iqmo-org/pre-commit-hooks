@@ -25,7 +25,7 @@ class CopyrightChecker:
         except FileNotFoundError:
             raise CopyrightFileNotFoundException(f"Copyright file {copyright_file} not found")
 
-    def check_file_copyright(self, file: pathlib.Path,max_lines: int) -> bool:
+    def check_file_copyright(self, file: pathlib.Path) -> bool:
         file_data = pathlib.Path(file).read_text()
         lines=file_data.split("\n")
         exist_copyright=False
