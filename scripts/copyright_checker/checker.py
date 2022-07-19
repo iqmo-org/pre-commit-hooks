@@ -30,9 +30,8 @@ class CopyrightChecker:
         lines=file_data.split("\n")
         exist_copyright=False
         for index,line in enumerate(lines):
-            print(index)
             exist_copyright=line.__contains__(self.copyright);
-            if exist_copyright or index > self.max_lines:
+            if exist_copyright or index >= self.max_lines:
                 break;
         return exist_copyright
 
