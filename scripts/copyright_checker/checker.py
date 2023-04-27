@@ -26,7 +26,7 @@ class CopyrightChecker:
             raise CopyrightFileNotFoundException(f"Copyright file {copyright_file} not found")
 
     def check_file_copyright(self, file: pathlib.Path) -> bool:
-        file_data = pathlib.Path(file).read_text()
+        file_data = pathlib.Path(file).read_text(encoding="utf-8")
         lines=file_data.split("\n")
         exist_copyright=False
         for index,line in enumerate(lines):
